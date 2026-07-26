@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 
 import { CrtOverlay } from "./components/arcade/CrtOverlay";
+import { NeonBackground } from "./components/arcade/NeonBackground";
 import { ParticleField } from "./components/arcade/ParticleField";
 import { Navbar } from "./components/arcade/Navbar";
 import { Hero } from "./components/arcade/Hero";
@@ -59,6 +60,7 @@ function App() {
 
   return (
     <div className="App dark">
+      <NeonBackground />
       <ParticleField />
       {!reduced && <div ref={glowRef} className="cursor-glow" aria-hidden="true" />}
       <Navbar />

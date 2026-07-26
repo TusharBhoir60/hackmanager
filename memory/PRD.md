@@ -28,3 +28,10 @@ Navbar (sticky glass + mobile menu) → Hero (arcade hall, CSS cabinet, particle
 
 ## How to edit content
 Everything (dates, venue, prizes, tracks, FAQ, sponsors, socials, register URL) is in `/app/frontend/src/content.js`. Swap `SITE.registerUrl` with the Unstop listing when ready.
+
+## Update — Visual Upgrade (user request)
+- Added live animated background system (`NeonBackground.jsx`): drifting aurora orbs, rotating conic haze, infinite scrolling synthwave mega-grid (scroll-reactive), horizontal neon scan sweep, twinkling stars — all scroll-parallaxed via rAF.
+- Particle canvas now also spawns diagonal shooting-star streaks (comets) in palette colors, more frequent near final CTA climax.
+- Typography upgrade: headings now use Orbitron (display font, uppercase) with animated neon gradient text (.title-gradient / .hero-line-gradient); Space Grotesk retained for card titles, Figtree body, IBM Plex Mono data, Press Start 2P micro-labels.
+- Logo enlarged: hero logo now 560px with pulsing glow stage (.logo-stage + .logo-glow-pulse); navbar logo h-12.
+- Verified: desktop + mobile, no overflow, no console errors.

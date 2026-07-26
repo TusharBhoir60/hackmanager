@@ -57,6 +57,19 @@ export const ParticleField = () => {
       alpha: rand(0.05, 0.16),
     }));
 
+    // Occasional diagonal shooting streaks (comets)
+    const streaks = [];
+    const spawnStreak = () => ({
+      x: rand(-0.1 * W, W * 0.7),
+      y: rand(-40, H * 0.5),
+      vx: rand(6, 11),
+      vy: rand(2.5, 5),
+      len: rand(90, 200),
+      life: 1,
+      color: ["#2EF2FF", "#FF2BD6", "#FFD84A"][Math.floor(Math.random() * 3)],
+    });
+    let streakTimer = 0;
+
     // Static render for reduced motion
     if (reduced) {
       ctx.clearRect(0, 0, W, H);
@@ -98,6 +111,33 @@ export const ParticleField = () => {
           r.x = Math.random() * W;
         }
       });
+
+      // Shooting streaks (spawn every ~4-9s, more often during climax)
+      streakTimer -= 0.016;
+      if (streakTimer <= 0 && streaks.length < 3) {
+        streaks.push(spawnStreak());
+        streakTimer = rand(4, 9) / boost;
+      }
+      for (let i = streaks.length - 1; i >= 0; i--) {
+        const s = streaks[i];
+        const mag = Math.hypot(s.vx, s.vy);
+        const tx = s.x - (s.vx / mag) * s.len;
+        const ty = s.y - (s.vy / mag) * s.len;
+        const grad = ctx.createLinearGradient(s.x, s.y, tx, ty);
+        grad.addColorStop(0, s.color);
+        grad.addColorStop(1, "transparent");
+        ctx.globalAlpha = 0.55 * s.life;
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.moveTo(s.x, s.y);
+        ctx.lineTo(tx, ty);
+        ctx.stroke();
+        s.x += s.vx;
+        s.y += s.vy;
+        s.life -= 0.008;
+        if (s.x - s.len > W || s.y - s.len > H || s.life <= 0) streaks.splice(i, 1);
+      }
 
       // Floating pixels
       particles.forEach((p) => {

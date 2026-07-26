@@ -40,7 +40,7 @@ export const Navbar = () => {
           <img
             src={SITE.logoUrl}
             alt={SITE.name}
-            className="h-9 w-auto drop-shadow-[0_0_12px_rgba(46,242,255,0.35)]"
+            className="h-12 w-auto drop-shadow-[0_0_16px_rgba(46,242,255,0.45)]"
           />
         </a>
 

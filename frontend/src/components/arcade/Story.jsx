@@ -106,7 +106,7 @@ export const Story = () => {
           </div>
           <h2
             ref={titleRef}
-            className={`font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-4 text-[#EAF6FF] glitch-once ${glitched ? "is-glitching" : ""}`}
+            className={`font-display font-extrabold text-[clamp(1.5rem,3.4vw,2.9rem)] leading-[1.15] mt-4 title-gradient glitch-once ${glitched ? "is-glitching" : ""}`}
             data-testid="story-title"
           >
             {STORY.title}

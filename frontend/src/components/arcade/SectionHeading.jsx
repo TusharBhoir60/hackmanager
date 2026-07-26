@@ -21,7 +21,7 @@ export const SectionHeading = ({ eyebrow, title, sub, align = "left", accent = "
         <span className="inline-block w-8 h-px bg-current opacity-60" />
         {eyebrow}
       </div>
-      <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-4 text-[#EAF6FF]">
+      <h2 className="font-display font-extrabold text-[clamp(1.5rem,3.4vw,2.9rem)] leading-[1.15] mt-4 title-gradient">
         {title}
       </h2>
       {sub && (

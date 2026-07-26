@@ -72,7 +72,7 @@ export const FinalCta = () => {
 
           {/* Screen */}
           <div className="final-cab-screen p-8 sm:p-14 text-center">
-            <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-[#EAF6FF] relative z-10">
+            <h2 className="font-display font-extrabold text-[clamp(1.7rem,4vw,3.2rem)] leading-[1.15] title-gradient relative z-10">
               {FINAL_CTA.title}
             </h2>
             <p className="mt-5 max-w-xl mx-auto text-sm sm:text-base leading-relaxed text-[#A9C7D9] relative z-10">

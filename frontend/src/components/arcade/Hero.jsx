@@ -108,15 +108,19 @@ export const Hero = () => {
             </span>
           </motion.div>
 
-          <motion.img
-            src={SITE.logoUrl}
-            alt={SITE.name}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 w-[min(420px,88%)] drop-shadow-[0_0_28px_rgba(46,242,255,0.28)]"
-            data-testid="hero-logo"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="logo-stage mt-8 w-[min(560px,96%)]"
+          >
+            <img
+              src={SITE.logoUrl}
+              alt={SITE.name}
+              className="w-full logo-glow-pulse"
+              data-testid="hero-logo"
+            />
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -131,12 +135,12 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading font-bold tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.04] mt-4 text-[#EAF6FF]"
+            className="font-display font-extrabold text-[clamp(1.9rem,4.6vw,3.9rem)] leading-[1.12] mt-4 text-[#EAF6FF]"
             data-testid="hero-headline"
           >
             {HERO.headline.map((line, i) => (
               <span key={i} className="block">
-                {i === 2 ? <span className="neon-text-magenta">{line}</span> : line}
+                {i === 2 ? <span className="hero-line-gradient">{line}</span> : line}
               </span>
             ))}
           </motion.h1>
