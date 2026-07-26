@@ -1,0 +1,34 @@
+[
+  {
+    "content": "Get design guidelines from design_agent",
+    "status": "in_progress"
+  },
+  {
+    "content": "Phase 2: Setup dependencies (framer-motion/GSAP, fonts)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Centralized content.js config (dates, prizes, tracks, links)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build all 10 sections + footer (Hero, Story, Challenge Zones, Timeline, Rewards, Why Participate, Highlights, Sponsors, FAQ, Final CTA)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Motion system (parallax, particles, neon effects, magnetic buttons, reduced-motion)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Verify with screenshots, fix visual issues",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: End to End Testing using Testing Agent",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: All user stories covered in development and testing",
+    "status": "pending"
+  }
+]
